@@ -13,11 +13,14 @@ Comment.init(
       },
       user_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         references: {
           model: 'user',
           key: 'id'
-        }
+        },
+      date: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
       },
       post_id: {
         type: DataTypes.INTEGER,
@@ -25,16 +28,14 @@ Comment.init(
         references: {
           model: 'post',
           key: 'id'
-        }
+        },
       },
-      comment_text: {
+      comment: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-            len: [1]
         }
       }
-  },
+    },
   {
     sequelize,
     freezeTableName: true,
