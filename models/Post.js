@@ -17,17 +17,22 @@ Post.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-      post_content: {
-        type: DataTypes.TEXT,
-        allowNull: true
-      },
       user_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'user',
           key: 'id'
-        }
-      }
+        },
+      },
+      date: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+      },
+      content: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     },
     {
       sequelize,
