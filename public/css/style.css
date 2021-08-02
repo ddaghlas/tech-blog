@@ -1,164 +1,134 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    color: #333;
-  }
-  
-  a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-  }
-  
-  a:hover {
-    color: #3486eb;
-  }
-  
-  button {
-    border: 0;
-    padding: 1%;
-    font-weight: bold;
-    transition: background-color .1s;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .post-list {
-    margin: 0;
-    padding: 0;
-  }
-  
-  textarea, input {
-    padding: .5%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  textarea:focus, input:focus {
-    outline: none;
-    border: 1px solid #3486eb;
-  }
-  
-  textarea {
-    min-width: 40%;
-    min-height: 100px;
-  }
-  
-  form > div {
-    margin-bottom: 2%;
-  }
-  
-  form label {
-    display: block;
-  }
-  
-  .wrapper {
-    width: 100%;
-    min-height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  header {
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-  }
-  
-  main {
-    flex: 1;
-    padding: 2% 4%;
-  }
-  
-  .btn-no-style {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color: #225ca3;
-    font-size: 100%;
-    font-weight: bold;
-    transition: color .1s;
-    margin-left: 16px;
-  }
-  
-  .btn-no-style:hover {
-    background: none;
-    color: #3486eb;
-  }
-  
-  .delete-post-btn {
-    background-color: #d41414;
-  }
-  
-  .delete-post-btn:hover {
-    background-color: #ff643d;
-  }
-  
-  .post {
-    margin-bottom: 2%;
-    line-height: 150%;
-  }
-  
-  .post .title span {
-    font-style: italic;
-    font-size: 90%;
-    color: #7d7d7d;
-  }
-  
-  .edit-link {
-    display: block;
-    margin: -1.5% 0 2% 0;
-  }
-  
-  .comment-form {
-    margin-bottom: 5%;
-  }
-  
-  .comment {
-    padding: 1%;
-    margin-bottom: 1%;
-  }
-  
-  .comment:nth-child(odd) {
-    background-color: #fff5eb;
-  }
-  
-  .comment .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
-  }
-  
-  .edit-post-form {
-    margin-bottom: 5%;
-  }
-  
-  footer {
-    border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    font-size: 110%;
-  }
+:root {
+  --dark-color: #231010;
+  --light-color: #d9ead3;
+  --shadow-color: #a7a7a7;
+}
 
-  .card {
-      margin-bottom: 1em;
-      margin-top: 1em;
-  }
+body {
+  /* width: 300px; */
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
 
-  .rows{
-      display:flex;
-      flex-direction: column;
-  }
+p {
+  line-height: 1.4;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: var(--light-color);
+}
+
+a:visited {
+  color: var(--light-color);
+}
+
+a:focus {
+  /* border-bottom: 1px solid; */
+  background: #BAE498;
+  color: var(--dark-color);
+}
+
+a:hover {
+  /* border-bottom: 1px solid; */
+  background: #CDFEAA;
+  color: var(--dark-color);
+}
+
+a:active {
+  background: #265301;
+  color: #CDFEAA;
+  color: var(--dark-color);
+}
+
+header {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+}
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+  color: var(--light-color);
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: var(--dark-color);;
+  text-decoration: none;
+  background-color: #CDFEAA;
+  /* border-bottom: 1px solid; */
+}
+
+.logo {
+  width: 280px;
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  border-radius: 12px;
+  box-shadow: 6px 6px var(--shadow-color);
+}
+
+.card-header {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+}
+
+.card {
+  border: solid;
+  border-color: var(--dark-color);
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  text-align: center;
+  background-color: rgb(83, 82, 82);
+}
+
+#dark-link {
+  color: var(--dark-color);
+  line-height: 36px;
+}
+
+#new-post-btn {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  height: 60px;
+  line-height: 60px;
+  width: 200px;
+  border-radius: 10px;
+  font-size: 24px;
+  text-align: center;
+  margin: auto;
+}
+
+#new-post-btn:hover {
+  color: var(--dark-color);;
+  text-decoration: none;
+  background-color: #CDFEAA;
+  border: 2px solid;
+}
+
+.card-header-link:hover {
+  color: var(--dark-color);;
+  text-decoration: none;
+  background-color: #CDFEAA;
+  border: 2px solid;
+}
